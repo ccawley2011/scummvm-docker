@@ -205,6 +205,14 @@ services:
       CCACHE_DIR: /data/ccache/dreamcast
       WORKERNAME: dreamcast
 
+  ds:
+    <<: *defaultWorker
+    image: scummvm/buildbot-ds:latest
+    environment:
+      <<: *defaultEnv
+      CCACHE_DIR: /data/ccache/ds
+      WORKERNAME: ds
+
   freemint:
     <<: *defaultWorker
     image: scummvm/buildbot-freemint:latest
