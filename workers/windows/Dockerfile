@@ -62,11 +62,14 @@ RUN ./compile-libraries-windows.sh mpeg2dec
 COPY ${WORKER_NAME}/library-rules/fluidsynth-lite.sh library-rules/
 RUN ./compile-libraries-windows.sh fluidsynth-lite
 
-# Expat and wxWidgets are used only for ScummVM Tools
+# Expat, wxWidgets and Boost are used only for ScummVM Tools
 RUN ./compile-libraries-windows.sh expat
 
 COPY ${WORKER_NAME}/library-rules/wxwidgets3.0.sh library-rules/
 RUN ./compile-libraries-windows.sh wxwidgets3.0
+
+COPY ${WORKER_NAME}/library-rules/boost1.62.sh library-rules/
+RUN ./compile-libraries-windows.sh boost1.62
 
 ARG SPARKLE_VERSION=0.5.7
 
