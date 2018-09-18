@@ -102,6 +102,7 @@ RUN apt-get update && \
 
 ENV VITASDK=/opt/vitasdk
 ENV PATH=$PATH:$VITASDK/bin:$VITASDK/arm-vita-eabi/bin
+ENV PKG_CONFIG_LIBDIR=$VITASDK/arm-vita-eabi/lib/pkgconfig
 
 USER buildbot
 WORKDIR /buildbot

@@ -27,6 +27,7 @@ USER buildbot
 WORKDIR /buildbot
 
 ENV PATH=$PATH:/usr/arm-linux-gnueabihf/bin \
+	PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig \
 	ADDR2LINE=arm-linux-gnueabihf-addr2line \
 	AR=arm-linux-gnueabihf-ar \
 	AS=arm-linux-gnueabihf-as \

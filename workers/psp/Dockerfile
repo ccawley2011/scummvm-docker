@@ -59,6 +59,7 @@ USER root
 ENV PSPDEV /pspdev
 ENV PSPSDK $PSPDEV/psp
 ENV PATH=$PATH:$PSPDEV/bin:$PSPSDK/bin \
+	PKG_CONFIG_LIBDIR=$PSPSDK/lib/pkgconfig \
 	CXXFLAGS="$CXXFLAGS -isystem /pspdev/psp/sdk/include" \
 	LDFLAGS="$LDFLAGS -L /pspdev/psp/sdk/lib" \
 	ADDR2LINE=psp-addr2line \

@@ -128,6 +128,7 @@ RUN apt-get update && \
 COPY --from=compiler /usr/m68k-atari-mint /usr/m68k-atari-mint
 
 ENV PATH=$PATH:/usr/m68k-atari-mint/bin \
+	PKG_CONFIG_LIBDIR=/usr/m68k-atari-mint/lib/pkgconfig \
 	ADDR2LINE=m68k-atari-mint-addr2line \
 	AR=m68k-atari-mint-ar \
 	AS=m68k-atari-mint-as \

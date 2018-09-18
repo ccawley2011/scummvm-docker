@@ -29,6 +29,7 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV PATH=$PATH:/opt/diablo/root/usr/bin:/opt/diablo/gcc-5/bin \
+	PKG_CONFIG_LIBDIR=/opt/diablo/root/usr/lib/pkgconfig \
 	ADDR2LINE=arm-none-linux-gnueabi-addr2line \
 	AR=arm-none-linux-gnueabi-ar \
 	AS=arm-none-linux-gnueabi-as \

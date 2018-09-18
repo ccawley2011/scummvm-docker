@@ -254,6 +254,7 @@ RUN apt-get update && \
 		&& \
 	rm -rf /var/lib/apt/lists/*
 ENV PATH=$PATH:/opt/dc/bin \
+	PKG_CONFIG_LIBDIR=/opt/dc/sh-elf/lib/pkgconfig \
 	RONINDIR=/opt/dc/ronin \
 	IP_TEMPLATE_FILE=/opt/dc/bin/IP.TMPL \
 	CXXFLAGS="$CXXFLAGS -isystem /opt/dc/ronin/include" \

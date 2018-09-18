@@ -49,6 +49,7 @@ ARG WORKER_NAME
 ENV PS3DEV  /ps3dev
 ENV PSL1GHT $PS3DEV
 ENV PATH    $PATH:$PS3DEV/bin:$PS3DEV/ppu/bin:$PS3DEV/spu/bin
+ENV PKG_CONFIG_LIBDIR $PS3DEV/portlibs/ppu/lib/pkgconfig
 
 COPY --from=builder /ps3dev /ps3dev
 

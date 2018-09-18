@@ -13,6 +13,7 @@ RUN apt-get update && \
 		git \
 		gzip \
 		make \
+		pkg-config \
 		python-openssl \
 		python-pip \
 		python-twisted \

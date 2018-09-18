@@ -137,12 +137,8 @@ RUN wget --progress=bar:force:noscroll -O pkg.hpkg \
 
 RUN sed -i 's#/packages/libsdl2-2.0.5-3/.self#/system#g' /system/bin/sdl2-config
 RUN sed -e 's#/packages/freetype-2.7.1-1/.self#/system#g' \
-		-e 's#/packages/libpng16-1.6.29-1/.self/lib#/system/develop/lib#g' \
-		-i /system/bin/freetype-config && \
-# ScummVM calls freetype-config with a prefix which causes it to return include
-# paths that are invalid for the custom filesystem structure that Haiku uses,
-# so just ignore any prefix-setting argument to always get the right value
-	perl -0777 -pe 's#prefix=\$optarg\n\s+local_prefix=yes\n##' -i /system/bin/freetype-config
+		-e 's#/packages/freetype_devel-2.7.1-1/devel~libpng16#/system#g' \
+		-i /system/develop/lib/pkgconfig/freetype2.pc
 
 FROM ${DEFAULT_BASE_IMAGE}
 USER root
@@ -157,6 +153,7 @@ COPY --from=compiler \
 COPY --from=compiler /usr/local/bin/jam /usr/local/bin/jam
 
 ENV PATH=/tools/cross-tools-x86/bin:/system/bin:$PATH \
+	PKG_CONFIG_LIBDIR=/system/develop/lib/pkgconfig \
 # The compiler will try to link to libstdc++.a and fail due to ABI
 # incompatibility because only /system/develop/lib is in the default list of
 # search paths

@@ -83,6 +83,7 @@ RUN apt-get update && \
 ENV DEVKITPRO=/opt/devkitpro
 ENV DEVKITPPC=$DEVKITPRO/devkitPPC
 ENV PATH=$PATH:$DEVKITPPC/bin:$DEVKITPPC/powerpc-eabi/bin
+ENV PKG_CONFIG_LIBDIR=$DEVKITPPC/powerpc-eabi/lib/pkgconfig
 
 USER buildbot
 WORKDIR /buildbot

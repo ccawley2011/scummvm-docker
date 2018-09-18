@@ -121,6 +121,7 @@ RUN apt-get update && \
 
 COPY --from=compiler /usr/ppc-amigaos /usr/ppc-amigaos
 ENV PATH=$PATH:/usr/ppc-amigaos/bin \
+	PKG_CONFIG_LIBDIR=/usr/ppc-amigaos/lib/pkgconfig \
 	ADDR2LINE=ppc-amigaos-addr2line \
 	AR=ppc-amigaos-ar \
 	AS=ppc-amigaos-as \

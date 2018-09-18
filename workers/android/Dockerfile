@@ -159,6 +159,7 @@ RUN mkdir -p /buildbot/.android && \
 	chown buildbot:buildbot /buildbot/.android
 
 ENV PATH=$PATH:/opt/android/arm/bin:/opt/android/arm/arm-linux-androideabi/bin \
+	PKG_CONFIG_LIBDIR=/opt/android/arm/arm-linux-androideabi/lib/pkgconfig \
 	NDK_LOG=1 \
 	NDK_PLATFORMS_ROOT=/opt/android/platforms \
 	NDK_TOOLCHAINS_ROOT=/opt/android/toolchains \

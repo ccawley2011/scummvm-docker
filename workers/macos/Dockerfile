@@ -100,6 +100,7 @@ COPY ${WORKER_NAME}/arc /usr/lib/llvm-3.8/lib/arc
 ARG SDK_VERSION=10.8
 
 ENV PATH=$PATH:/opt/osxcross/bin:/opt/osxcross/macports/pkgs/opt/local/bin:/opt/osxcross/SDK/MacOSX${SDK_VERSION}.sdk/usr/bin \
+	PKG_CONFIG_LIBDIR=/opt/osxcross/macports/pkgs/opt/local/lib/pkgconfig \
 	OBJECTDUMP=x86_64-apple-darwin12-ObjectDump \
 	AR=x86_64-apple-darwin12-ar \
 	AS=x86_64-apple-darwin12-as \

@@ -122,6 +122,7 @@ RUN apt-get update && \
 
 ENV LD_LIBRARY_PATH=/opt/ioscross/bin:$LD_LIBRARY_PATH \
 	PATH=$PATH:/opt/ioscross/bin \
+	PKG_CONFIG_LIBDIR=/opt/ioscross/lib/pkgconfig \
 	CFLAGS="$CFLAGS -arch armv7 -isystem /opt/ioscross/include" \
 	CXXFLAGS="$CXXFLAGS -arch armv7 -isystem /opt/ioscross/include" \
 	LDFLAGS="$LDFLAGS -arch armv7 -L/opt/ioscross/lib" \

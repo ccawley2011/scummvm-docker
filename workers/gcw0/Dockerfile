@@ -18,6 +18,7 @@ RUN apt-get update && \
 	rm gcw0.tar.bz2
 
 ENV PATH=/opt/gcw0-toolchain/usr/bin:$PATH
+ENV PKG_CONFIG_LIBDIR=/opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr/lib/pkgconfig:/opt/gcw0-toolchain/usr/lib/pkgconfig
 
 USER buildbot
 WORKDIR /buildbot
