@@ -293,6 +293,14 @@ services:
       CCACHE_DIR: /data/ccache/vita
       WORKERNAME: vita
 
+  wince:
+    <<: *defaultWorker
+    image: scummvm/buildbot-wince:latest
+    environment:
+      <<: *defaultEnv
+      CCACHE_DIR: /data/ccache/wince
+      WORKERNAME: wince
+
   windows:
     <<: *defaultWorker
     image: scummvm/buildbot-windows:latest

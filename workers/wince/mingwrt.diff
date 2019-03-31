@@ -1,0 +1,22 @@
+diff --git a/mingwex/wince/timeutil.h b/mingwex/wince/timeutil.h
+index dbafd23..01c15e9 100644
+--- a/mingwex/wince/timeutil.h
++++ b/mingwex/wince/timeutil.h
+@@ -6,7 +6,7 @@
+ 
+ #define _onesec_in100ns 10000000LL
+ 
+-__CRT_INLINE long long
++static inline long long
+ __FILETIME_to_ll (const FILETIME *f)
+ {
+   long long t;
+@@ -15,7 +15,7 @@ __FILETIME_to_ll (const FILETIME *f)
+   return t;
+ }
+ 
+-__CRT_INLINE void
++static inline void
+ __ll_to_FILETIME (long long t, FILETIME* f)
+ {
+   f->dwHighDateTime = (DWORD)((t >> 32) & 0x00000000FFFFFFFF);

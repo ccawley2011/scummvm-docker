@@ -1,0 +1,30 @@
+--- vorbisfile.c.orig	2011-11-06 14:36:14.000000000 +0000
++++ vorbisfile.c	2018-07-04 23:43:53.716018000 +0100
+@@ -18,7 +18,9 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#ifndef __MINGW32CE__
+ #include <errno.h>
++#endif
+ #include <string.h>
+ #include <math.h>
+ 
+@@ -60,13 +62,17 @@
+ 
+ /* read a little more data from the file/pipe into the ogg_sync framer */
+ static long _get_data(OggVorbis_File *vf){
++#ifndef __MINGW32CE__
+   errno=0;
++#endif
+   if(!(vf->callbacks.read_func))return(-1);
+   if(vf->datasource){
+     char *buffer=ogg_sync_buffer(&vf->oy,CHUNKSIZE);
+     long bytes=(vf->callbacks.read_func)(buffer,1,CHUNKSIZE,vf->datasource);
+     if(bytes>0)ogg_sync_wrote(&vf->oy,bytes);
++#ifndef __MINGW32CE__
+     if(bytes==0 && errno)return(-1);
++#endif
+     return(bytes);
+   }else
+     return(0);
